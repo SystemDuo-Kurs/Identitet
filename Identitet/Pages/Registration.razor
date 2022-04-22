@@ -1,0 +1,12 @@
+﻿@page "/reg"
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<Manager> UserManager
+
+@code 
+{
+    protected override async Task OnInitializedAsync()
+    {
+        Manager m = new Manager { Email = "t@t.t", UserName = "t" };
+        await UserManager.CreateAsync(m, "asdQWE123!");
+    }
+}
