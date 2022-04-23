@@ -10,5 +10,7 @@ namespace Identitet.Data
         {
         }
         DbSet<Manager> Managers { get; set; }
+        DbSet<User> Users { get; set; }
+        DbSet<Person> People { get; set; }
     }
 }

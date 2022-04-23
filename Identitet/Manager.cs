@@ -2,7 +2,12 @@
 
 namespace Identitet
 {
-    public class Manager : IdentityUser
+    public class Person : IdentityUser
+    { }
+    public class Manager : Person
+    {
+    }
+    public class User : Person
     {
     }
 }

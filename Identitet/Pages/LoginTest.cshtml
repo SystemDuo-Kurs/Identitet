@@ -1,0 +1,18 @@
+﻿@page "/loginTest"
+@using Microsoft.AspNetCore.Identity
+@using Identitet
+@inject SignInManager<Person> TestTest
+@inject UserManager<Person> UserMan
+@attribute [IgnoreAntiforgeryToken]
+@model Identitet.Pages.LoginTestModel
+<form method="post" action="loginTest">
+    <button type="submit">Teeest</button>
+</form>
+@functions {
+    public async Task<IActionResult> OnPost()
+    {
+        var user = await UserMan.FindByEmailAsync("m@m.m");
+        await TestTest.PasswordSignInAsync(user, "asdQWE123!", true, false);
+        return Redirect("~/");
+    }
+}
